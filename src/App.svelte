@@ -1,30 +1,22 @@
 <script>
-	export let name;
+  export let name;
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+<style global>
+  /* purgecss start ignore */
+  @tailwind base;
+  @tailwind components;
+  /* purgecss end ignore */
+  @tailwind utilities;
 </style>
+
+<main class="max-w-sm mx-auto p-4 antialiased text-center">
+  <h1 class="text-6xl text-red-500 font-hairline uppercase">Hello {name}!</h1>
+  <p class="mt-4">
+    Visit the
+    <a
+      class="text-blue-500 hover:underline"
+      href="https://svelte.dev/tutorial">Svelte tutorial</a>
+    to learn how to build Svelte apps.
+  </p>
+</main>
