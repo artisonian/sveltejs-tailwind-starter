@@ -1,4 +1,5 @@
 <script>
+  import Counter from "./Counter.svelte";
   export let name;
 </script>
 
@@ -19,4 +20,7 @@
       href="https://svelte.dev/tutorial">Svelte tutorial</a>
     to learn how to build Svelte apps.
   </p>
+  <div class="mt-4">
+    <Counter />
+  </div>
 </main>
