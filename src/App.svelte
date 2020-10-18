@@ -1,4 +1,7 @@
 <script>
+  import HuePicker from "./HuePicker.svelte";
+  import SatLightPicker from "./SatLightPicker.svelte";
+
   let [h, s, l] = [34, 100, 50];
   let [r, g, b] = [255, 153, 0];
 
@@ -32,25 +35,8 @@
 
     <div class="flex items-center p-4 border-t-2 border-gray-200">
       <div>
-        <div
-          x-data="app.satLightPicker()"
-          x-init="init()"
-          x-spread="well"
-          class="relative flex-none w-32 h-32 border-2 border-gray-200">
-          <span
-            x-spread="thumb"
-            class="block absolute w-6 h-6 -mb-3 -ml-3 bg-transparent rounded-full border border-4 border-gray-200 shadow-md" />
-        </div>
-
-        <div
-          x-data="app.huePicker()"
-          x-init="init()"
-          x-spread="well"
-          class="relative flex-none mt-3 w-32 h-8 border-2 border-gray-100">
-          <span
-            x-spread="thumb"
-            class="block absolute w-6 h-6 -mb-3 -ml-3 border border-gray-200 rounded-full bg-gray-100 shadow-lg" />
-        </div>
+        <SatLightPicker {h} {s} {l} />
+        <HuePicker {h} />
       </div>
 
       {#if mode === 'hsl'}
