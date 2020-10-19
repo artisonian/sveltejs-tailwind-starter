@@ -6,7 +6,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    content: ["./src/**/*.svelte"],
+    content: ["./src/**/*.svelte", "./public/index.html"],
     enabled: production,
   },
   theme: {
